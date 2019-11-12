@@ -10,20 +10,27 @@
 	
     <!-- Define your beans here -->
     
-    <!-- define the dependency -->
-<!--    <bean id="myFortuneService"-->
-<!--    		class="com.luv2code.HappyFortuneService">-->
-<!--    	</bean>-->
-    
-<!-- 	<bean id="myCoach"-->
-<!-- 		class="TrackCoach">-->
-<!-- 	</bean>-->
-	<bean id="myCoach"
-		  class="com.luv2code.springdemo.BaseballCoach">
-	</bean>
+    <bean id="myFortune"
+          class="com.luv2code.springdemo.HappyFortuneService">
+    </bean>
+
+
+    <bean id="myLoggerConfig" class="com.luv2code.springdemo.MyLoggerConfig">
+        <property name="rootLoggerLevel" value="FINE" />
+        <property name="printedLoggerLevel" value="FINE" />
+    </bean>
+    <bean id="secondCoach"
+          class="com.luv2code.springdemo.SwimingCoach">
+    </bean>
 
 
 
+    <bean id="myCoach"
+          class="com.luv2code.springdemo.TrackCoach">
+
+        <!--set up the constructor injection-->
+        <constructor-arg ref="myFortune"/>
+    </bean>
 </beans>
 
 
