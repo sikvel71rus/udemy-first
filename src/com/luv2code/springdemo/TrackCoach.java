@@ -21,4 +21,13 @@ public class TrackCoach implements Coach {
         return "Just Do IT: " +fortuneService.getFortune();
     }
 
+    // add an init method
+    public void doMyStartupStaff(){
+        System.out.println("TrackCoach: inside method doMyStartupStuff");
+    }
+
+    // add a destroy method
+    public void doMyCleanupStaffYoYo(){
+        System.out.println("TrackCoach: inside method doMyCleanupStaffYoYo");
+    }
 }
